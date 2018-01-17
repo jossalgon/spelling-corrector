@@ -9,7 +9,7 @@ var spellCorrector = function() {
 spellCorrector.prototype.loadDictionary = function(dictPath) {
     dictPath = dictPath || __dirname + '/big.txt';
     var file = fs.readFileSync(dictPath).toString().toLowerCase();
-    var regex = /[a-z]+/g;
+    var regex = /[a-zñÑáéíóúÁÉÍÓÚ]+/g;
     var match, word;
     while ((match = regex.exec(file))) {
         word = match[0];
